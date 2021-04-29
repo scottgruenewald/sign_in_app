@@ -2,8 +2,6 @@ import requests
 from datetime import datetime, timezone
 from dateutil import parser
 
-
-
 class sign_in_app:
 	def __init__(self, site_ids, base_url, connection_name, client_key, secret_key, api_timezone=timezone.utc, local_timezone=None, group_ids=[]):
 		self.connection_name=connection_name
@@ -30,6 +28,13 @@ class sign_in_app:
 			todays_visitors+=site_visitors
 		return todays_visitors
 
+
+	def get_history(self, start_date, end_date):
+		visitors=[]
+		for s in self.sites:
+			visitor_list=s.get_history(start_date, end_date)
+			visitors+=visitor_list
+		return visitors
 
 class site:
 	data_type="JSON"
@@ -66,14 +71,14 @@ class site:
 		objs=[]
 		start_date=self.convert_to_api_timezone(start_date)
 		end_date=self.convert_to_api_timezone(end_date)
-		print(start_date)
-		print(end_date)
-		base_url=f"{self.base_url}client-api/v1/sites/{self.site_id}/history?date_from={start_date}T00%3A00%3A00&date_to={end_date}T23%3A59%3A59&page=1"
+
+		base_url=f"{self.sign_in_app.base_url}client-api/v1/sites/{self.site_id}/history?date_from={start_date}T00%3A00%3A00&date_to={end_date}T23%3A59%3A59&page=1"
 		data=self.get(base_url)	
 		for d in data["data"]:
-			if d["group_id"] in self.group_ids:
+			if d["group_id"] in self.sign_in_app.group_ids:
 				user_obj=user(self, d)
 				objs.append(user_obj)
+		return objs
 
 class user:
 	def __init__(self, site, data_dict):
@@ -126,16 +131,53 @@ def usage():
 	group_ids=[]
 
 
-	api=sign_in_app(site_ids=site_ids, base_url=base_url, connection_name=connection_name, client_key=client_key, secret_key=secret_key, group_ids=group_ids)
+	# api=sign_in_app(site_ids=site_ids, base_url=base_url, connection_name=connection_name, client_key=client_key, secret_key=secret_key, group_ids=group_ids)
 	
 	"""
 	get_today iterates through the sites to retrieve all the visitors assigned to the group_ids specified above.
 	A list of sign_in_app.user objects of all the users from the sites is retrieved.
 	All datetime objects from the API come in UTC. The sign_in_app library will add localized datetimes to the user objects.
 	"""
-	visitors=api.get_today()
+	# visitors=api.get_today()
+
+	# print(visitors)
+
+
+	base_url="https://backend.us-e1.signinapp.com/"
+	client_key="zbKjaIKRknaoVzbchRBlXEu2"
+	connection_name="fv_connection_1"
+	secret_key=keyring.get_password(connection_name, client_key)
+	
+	#Instructs which sites to look at.
+	site_ids=[1017, 1192]
+
+	#Instructs which user groups to look at.
+	group_ids=[2087]
+
+	#API's timezone is UTC. If you need to specify otherwise for whatever reason, you can do so here. Leave out the arg to default to UTC.
+	api_timezone=timezone.utc
+
+	app_obj=sign_in_app(site_ids=site_ids, base_url=base_url, connection_name=connection_name, client_key=client_key, secret_key=secret_key, group_ids=group_ids)
+	
+	"""
+	get_today iterates through the sites to retrieve all the visitors assigned to the group_ids specified above.
+	A list of sign_in_app.user objects of all the users from the sites is retrieved.
+	All datetime objects from the API come in UTC. The sign_in_app library will add localized datetimes to the user objects.
+	"""
+	visitors=app_obj.get_today()
+
+	from datetime import datetime, timedelta
+	start_date=datetime.now()-timedelta(days=30)
+	end_date=datetime.now()
+
+
+	visitors=app_obj.get_history(start_date, end_date)
+
+
 
 	print(visitors)
+
+
 
 
 
