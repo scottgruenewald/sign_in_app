@@ -6,7 +6,9 @@
 def create_api_obj():
 	from sign_in_app.sign_in_app import sign_in_app
 	
-	#These options match up with the terminology of the Sign In App. Once you've created your client, it should be straight forward.
+	#These options match up with the terminology of the Sign In App.
+	#Once you've created your client, it should be straight forward.
+	
 	base_url="your_base_url"
 	client_key="your_client_key"
 	connection_name="your_connection_name"
