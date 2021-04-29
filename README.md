@@ -1,8 +1,8 @@
 # sign_in_app
 Unofficial Python API for the [Sign In App API](https://backend.signinapp.com/client-api/docs/1.0/overview).
 
+Once you've created a client for the Sign In App's API, you can plug in the info below.
 
- 
  ## Create API object
 ```python
 def create_api_obj():
