@@ -31,18 +31,8 @@ def create_api_obj():
 		secret_key=secret_key,
 		group_ids=group_ids
 		)
-	
-	"""
-	get_today iterates through the sites to retrieve all the visitors assigned to the group_ids specified above.
-	A list of sign_in_app.user objects of all the users from the sites is retrieved.
-	All datetime objects from the API come in UTC. The sign_in_app library will add localized datetimes to the user objects.
-	"""
-	visitors=api.get_today()
-
-	print(visitors)
   ```
-  
-  
+    
   ## Visitor Objects
   ### Once you've created an api object, you can call functions with it to return lists of visitor objects.
   ### The visitor object has these attributes available:
