@@ -5,9 +5,6 @@
 ```python
 def create_api_obj():
 	from sign_in_app.sign_in_app import sign_in_app
-	from datetime import datetime, timezone
-	from dateutil import parser
-	import keyring
 	
 	#These options match up with the terminology of the Sign In App. Once you've created your client, it should be straight forward.
 	base_url="your_base_url"
