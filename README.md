@@ -38,8 +38,11 @@ def create_api_obj():
 	visitors=api.get_today()
 
 	print(visitors)
+  ```
+  ## Get Today's Visitors
  
- 
- ```
- 
- 
+ ```python
+visitors=api.get_today()
+for visitor in visitors:
+	print(visitor.__dict__)
+  ```
