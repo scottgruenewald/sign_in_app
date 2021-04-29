@@ -1,7 +1,14 @@
 # sign_in_app
 Unofficial Python API for the [Sign In App API](https://backend.signinapp.com/client-api/docs/1.0/overview).
 
-Once you've created a client for the Sign In App's API, you can plug in the info below.
+Before you do anything, you'll need to create a client for the Sign In App's API on their website.
+
+Next, install the sign_in_app
+```bash
+pip install sign_in_app
+```
+
+Then you can use the boiler plate code below to interact with the API.
 
  ## Create API object
 ```python
@@ -42,6 +49,7 @@ def create_api_obj():
 		group_ids=group_ids
 		)
   ```
+  
     
   ## Visitor Objects
   ### Once you've created an api object, you can call functions with it to return lists of visitor objects.
@@ -80,6 +88,10 @@ def create_api_obj():
   }
   
   ```
+   
+   
+The library can give you today's data, or search historical data. Examples below.
+   
    
  ## Get Today's Visitors
 
