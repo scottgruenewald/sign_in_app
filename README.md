@@ -1,8 +1,10 @@
 # sign_in_app
  Python library to interface with the Sign In App API.
  
+ ## Create API object
 ```python
-def usage():
+def create_api_obj():
+	from sign_in_app.sign_in_app import sign_in_app
 	from datetime import datetime, timezone
 	from dateutil import parser
 	import keyring
@@ -13,10 +15,10 @@ def usage():
 	connection_name="your_connection_name"
 	secret_key="your_secret_key"
 	
-	#Instructs which sites to look at.
+	#Instructs which sites to look at. You will need to specify this.
 	site_ids=[]
 
-	#Instructs which user groups to look at.
+	#Instructs which user groups to look at. You will need to specify this.
 	group_ids=[]
 
 
