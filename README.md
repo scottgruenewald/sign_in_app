@@ -20,7 +20,7 @@ def create_api_obj():
 	#Instructs which user groups to look at. You will need to specify this.
 	group_ids=[]
 
-
+	#Create api object.
 	api=sign_in_app(
 		site_ids=site_ids,
 		base_url=base_url,
