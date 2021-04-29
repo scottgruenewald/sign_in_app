@@ -47,7 +47,7 @@ def create_api_obj():
   'id': some_integer, #This is the id for the visit.
   'group_id': some_integer, 
   'returning_visitor_id': some_integer, #This is basically the user's ID.
-  'name': 'Someone's Full Name', 
+  'name': "Someone's Full Name", 
   'photo_url': None, 
   'badge_url': None, 
   'status': 'signed_in', 
