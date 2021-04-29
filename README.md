@@ -76,8 +76,8 @@ def create_api_obj():
   'role': None, 
   'email': 'somebody@domain.com', 
   'mobile': None, 
-  'c3YQ5d9wQi': 'User's Department', 
-  'fQHRUCmOKz': 'User's Job Title', 
+  'c3YQ5d9wQi': "User's Department", 
+  'fQHRUCmOKz': "User's Job Title", 
   'rejected_sign_in': False, 
   
   #Custom fields added for convenience. Any suggestions, please get in contact.
