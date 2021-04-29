@@ -21,7 +21,14 @@ def create_api_obj():
 	group_ids=[]
 
 
-	api=sign_in_app(site_ids=site_ids, base_url=base_url, connection_name=connection_name, client_key=client_key, secret_key=secret_key, group_ids=group_ids)
+	api=sign_in_app(
+		site_ids=site_ids,
+		base_url=base_url,
+		connection_name=connection_name,
+		client_key=client_key,
+		secret_key=secret_key,
+		group_ids=group_ids
+		)
 	
 	"""
 	get_today iterates through the sites to retrieve all the visitors assigned to the group_ids specified above.
