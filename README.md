@@ -17,10 +17,20 @@ def create_api_obj():
 	secret_key="your_secret_key"
 	
 	#Instructs which sites to look at. You will need to specify this.
-	site_ids=[]
+	# Locate Site IDs:
+	#	Go to Manage
+	#	Click on Sites
+	#	Click on a site and check out the URL. There will be an ID there.
+	
+	site_ids=[1,2,3]#list of integers
 
 	#Instructs which user groups to look at. You will need to specify this.
-	group_ids=[]
+	# Locate Group IDs:
+	#	Go to Manage
+	#	Click on Groups
+	#	Click on a group and check out the URL. There will be an ID there.
+	
+	group_ids=[1,2,3]#list of integers
 
 	#Create api object.
 	api=sign_in_app(
