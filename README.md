@@ -1,5 +1,7 @@
 # sign_in_app
- Python library to interface with the Sign In App API.
+Unofficial Python API for the [Sign In App API](https://backend.signinapp.com/client-api/docs/1.0/overview).
+
+
  
  ## Create API object
 ```python
@@ -39,6 +41,15 @@ def create_api_obj():
 
 	print(visitors)
   ```
+  
+  
+  ## Visitor Objects
+  ### When you use the sign_in_app library, 
+  
+  
+  
+  
+  
   ## Get Today's Visitors
  
  ```python
@@ -46,3 +57,22 @@ visitors=api.get_today()
 for visitor in visitors:
 	print(visitor.__dict__)
   ```
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
