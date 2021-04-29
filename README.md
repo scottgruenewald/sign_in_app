@@ -93,10 +93,21 @@ def create_api_obj():
 ## The library can give you today's data, or search historical data. Examples below.
    
    
- ### Get Today's Visitors
+ ### get_today
 
  ```python
 visitors=api.get_today()
 for visitor in visitors:
 	print(visitor.__dict__)
+  ```
+
+
+ ### get_history
+ #### Accurate to the day.
+
+ ```python
+from datetime import datetime, timedelta
+start_date=datetime.now()-timedelta(days=7)
+end_date=datetime.now()
+app_obj.get_history(start_date, end_date)
   ```
