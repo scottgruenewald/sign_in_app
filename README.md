@@ -90,10 +90,10 @@ def create_api_obj():
   ```
    
    
-The library can give you today's data, or search historical data. Examples below.
+## The library can give you today's data, or search historical data. Examples below.
    
    
- ## Get Today's Visitors
+ ### Get Today's Visitors
 
  ```python
 visitors=api.get_today()
