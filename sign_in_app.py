@@ -85,9 +85,18 @@ class user:
 		self.site=site
 		self.sign_in_app=self.site.sign_in_app
 		self.__dict__.update(data_dict)
-		self.__dict__.update(self.personal_fields)
+
+		print(data_dict)
+
+		
+
+		if self.personal_fields:
+			self.__dict__.update(self.personal_fields)
+			del self.__dict__["personal_fields"]
+
 		self.__dict__.update(self.metadata)
-		del self.__dict__["personal_fields"]
+
+
 		del self.__dict__["metadata"]
 		self.add_custom_fields()
 
