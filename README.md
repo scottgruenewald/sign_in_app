@@ -1,5 +1,5 @@
 # sign_in_app
-Unofficial Python API for the [Sign In App API](https://backend.signinapp.com/client-api/docs/1.0/overview).
+Unofficial Python library for the [Sign In App API](https://backend.signinapp.com/client-api/docs/1.0/overview).
 
 Before you do anything, you'll need to create a client for the Sign In App's API on their website.
 
