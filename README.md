@@ -3,9 +3,9 @@ Unofficial Python library for the [Sign In App API](https://backend.signinapp.co
 
 Before you do anything, you'll need to create a client for the Sign In App's API on their website.
 
-Next, install the sign-in-app
+Next, install the sign-in-app library.
 ```bash
-pip install sign_in_app
+pip install sign-in-app
 ```
 
 Then you can use the boiler plate code below to interact with the API.
